@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alexandria Digital Library - Your Gateway to Knowledge</title>
+    <meta name="description" content="Discover thousands of books, join our reading community, and explore literary worlds at Alexandria Digital Library.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Lora:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header" id="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <a href="#" class="logo">
+                    <div class="logo-icon">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                            <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                        </svg>
+                    </div>
+                    <span>Alexandria</span>
+                </a>
+                <ul class="nav-menu" id="navMenu">
+                    <li><a href="#search" class="nav-link">Search</a></li>
+                    <li><a href="#categories" class="nav-link">Categories</a></li>
+                    <li><a href="#collections" class="nav-link">Collections</a></li>
+                    <li><a href="#recommendations" class="nav-link">Recommendations</a></li>
+                    <li><a href="#events" class="nav-link">Events</a></li>
+                    <li><a href="#membership" class="nav-link nav-link-cta">Join Now</a></li>
+                </ul>
+                <button class="mobile-toggle" id="mobileToggle" aria-label="Toggle navigation">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-background">
+            <img src="https://images.pexels.com/photos/1370295/pexels-photo-1370295.jpeg?auto=compress&cs=tinysrgb&w=1920" alt="Classic Library" loading="eager">
+        </div>
+        <div class="hero-overlay"></div>
+        <div class="hero-gradient"></div>
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">✨ Discover Your Next Adventure</div>
+                <h1 class="hero-title">
+                    <span class="hero-title-main">Welcome to</span>
+                    <span class="hero-title-highlight">Alexandria</span>
+                    <span class="hero-subtitle">Your Gateway to Infinite Knowledge and Timeless Stories</span>
+                </h1>
+                <br>
+                <p class="hero-description">
+                    Explore thousands of books, join our vibrant reading community, and embark on literary adventures from the comfort of your home.
+                </p>
+                <div class="hero-buttons">
+                    <a href="#search" class="btn btn-primary">Explore Library</a>
+                    <a href="#membership" class="btn btn-secondary">Become a Member</a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">12,000+</div>
+                        <div class="stat-label">Books</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">5,000+</div>
+                        <div class="stat-label">Members</div>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <div class="stat-number">50+</div>
+                        <div class="stat-label">Events/Year</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span></span>
+            <span></span>
+        </div>
+    </section>
+
+    <!-- Search Section -->
+    <section class="search-section" id="search">
+        <div class="container search-container">
+            <div class="section-header">
+                <span class="section-badge">Find Your Next Read</span>
+                <h2 class="section-title">Discover Amazing Books</h2>
+                <p class="section-subtitle">Search through our extensive collection with advanced filters</p>
+            </div>
+            
+            <div class="search-bar">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="8"/>
+                    <path d="M21 21l-4.35-4.35"/>
+                </svg>
+                <input type="text" id="searchInput" placeholder="Search by title, author, or keyword...">
+                <button class="search-clear" id="searchClear" style="display: none;">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="18" y1="6" x2="6" y2="18"></line>
+                        <line x1="6" y1="6" x2="18" y2="18"></line>
+                    </svg>
+                </button>
+            </div>
+
+            <div class="filters">
+                <div class="filter-group">
+                    <label for="genreFilter">Genre</label>
+                    <select id="genreFilter">
+                        <option value="">All Genres</option>
+                        <option value="fiction">Fiction</option>
+                        <option value="non-fiction">Non-Fiction</option>
+                        <option value="mystery">Mystery</option>
+                        <option value="romance">Romance</option>
+                        <option value="science-fiction">Science Fiction</option>
+                        <option value="biography">Biography</option>
+                        <option value="history">History</option>
+                        <option value="children">Children's Books</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label for="authorFilter">Author</label>
+                    <input type="text" id="authorFilter" placeholder="Search by author...">
+                </div>
+                <div class="filter-group">
+                    <label for="yearFilter">Publication Year</label>
+                    <select id="yearFilter">
+                        <option value="">Any Year</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2020-2022">2020-2022</option>
+                        <option value="2010-2019">2010-2019</option>
+                        <option value="2000-2009">2000-2009</option>
+                        <option value="classic">Before 2000</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <button class="btn btn-search" id="searchBtn">Search</button>
+                </div>
+            </div>
+
+            <div class="search-results" id="searchResults"></div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section" id="categories">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Explore Collections</span>
+                <h2 class="section-title">Browse by Category</h2>
+                <p class="section-subtitle">Explore our carefully curated collections across diverse genres</p>
+            </div>
+            <div class="categories-grid">
+                <div class="category-card" data-category="fiction">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/3747503/pexels-photo-3747503.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Fiction Books" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">📖</div>
+                        <h3>Fiction</h3>
+                        <p>Immerse yourself in captivating stories and imaginary worlds</p>
+                        <span class="category-count">2,340+ Books</span>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="non-fiction">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1604866830893-c13cafa515d5?auto=format&fit=crop&w=600" alt="Non-Fiction Books" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">🎓</div>
+                        <h3>Non-Fiction</h3>
+                        <p>Expand your knowledge with real stories and facts</p>
+                        <span class="category-count">1,890+ Books</span>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="academic">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1256890/pexels-photo-1256890.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Academic Books" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">🔬</div>
+                        <h3>Academic</h3>
+                        <p>Scholarly resources for students and researchers</p>
+                        <span class="category-count">3,120+ Books</span>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="children">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?auto=format&fit=crop&w=600" alt="Children's Books" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">🌈</div>
+                        <h3>Children's Books</h3>
+                        <p>Spark young imaginations with delightful tales</p>
+                        <span class="category-count">1,560+ Books</span>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="classics">
+                    <div class="category-image">
+                        <img src="https://images.pexels.com/photos/1887609/pexels-photo-1887609.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Classic Literature" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">📚</div>
+                        <h3>Classics</h3>
+                        <p>Timeless masterpieces that shaped literature</p>
+                        <span class="category-count">890+ Books</span>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+
+                <div class="category-card" data-category="science">
+                    <div class="category-image">
+                        <img src="https://images.unsplash.com/photo-1610116306796-6fea9f4fae38?auto=format&fit=crop&w=600" alt="Science Books" loading="lazy">
+                        <div class="category-overlay"></div>
+                    </div>
+                    <div class="category-content">
+                        <div class="category-icon">🚀</div>
+                        <h3>Science & Tech</h3>
+                        <p>Discover the wonders of science and innovation</p>
+                        <span class="category-count">1,450+ Books</span>
+                    </div>
+                    <div class="category-arrow">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Collections Section -->
+    <section class="collections-section" id="collections">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Handpicked Selections</span>
+                <h2 class="section-title">Featured Collections</h2>
+                <p class="section-subtitle">Curated selections for every mood and interest</p>
+            </div>
+            <div class="collections-grid">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="https://images.pexels.com/photos/30064050/pexels-photo-30064050.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Bestsellers Collection" loading="lazy">
+                        <div class="collection-shimmer"></div>
+                    </div>
+                    <div class="collection-content">
+                        <span class="collection-badge badge-popular">🔥 Popular</span>
+                        <h3>Current Bestsellers</h3>
+                        <p>The most sought-after books of the season. Discover what everyone's reading and join the conversation.</p>
+                        <a href="#" class="collection-link">
+                            Explore Collection
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="https://images.pexels.com/photos/7855639/pexels-photo-7855639.jpeg?auto=compress&cs=tinysrgb&w=800" alt="Staff Picks" loading="lazy">
+                        <div class="collection-shimmer"></div>
+                    </div>
+                    <div class="collection-content">
+                        <span class="collection-badge badge-curated">⭐ Curated</span>
+                        <h3>Staff Favorites</h3>
+                        <p>Our librarians' personal recommendations. Hidden gems and beloved classics they can't stop talking about.</p>
+                        <a href="#" class="collection-link">
+                            Explore Collection
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="https://images.pexels.com/photos/30437094/pexels-photo-30437094.jpeg?auto=compress&cs=tinysrgb&w=800" alt="New Arrivals" loading="lazy">
+                        <div class="collection-shimmer"></div>
+                    </div>
+                    <div class="collection-content">
+                        <span class="collection-badge badge-new">✨ New</span>
+                        <h3>New Arrivals</h3>
+                        <p>Fresh additions to our library. Be among the first to discover the latest publications and releases.</p>
+                        <a href="#" class="collection-link">
+                            Explore Collection
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Recommendations Section -->
+    <section class="recommendations-section" id="recommendations">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Just For You</span>
+                <h2 class="section-title">Personalized Recommendations</h2>
+                <p class="section-subtitle">Discover books tailored to your reading preferences</p>
+            </div>
+            <div class="recommendations-wrapper">
+                <button class="slider-btn prev" aria-label="Previous">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M15 18l-6-6 6-6"/>
+                    </svg>
+                </button>
+                <div class="recommendations-slider" id="recommendationsSlider">
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://images.pexels.com/photos/34500250/pexels-photo-34500250.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Book recommendation" loading="lazy">
+                            <div class="book-overlay">
+                                <button class="book-quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h4>The Midnight Library</h4>
+                            <p class="book-author">Matt Haig</p>
+                            <div class="book-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(4.2k)</span>
+                            </div>
+                            <p class="book-description">A dazzling novel about all the choices that go into a life well lived.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://images.pexels.com/photos/1887609/pexels-photo-1887609.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Book recommendation" loading="lazy">
+                            <div class="book-overlay">
+                                <button class="book-quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h4>Educated</h4>
+                            <p class="book-author">Tara Westover</p>
+                            <div class="book-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(3.8k)</span>
+                            </div>
+                            <p class="book-description">A memoir about a young woman who leaves her survivalist family.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://images.pexels.com/photos/3747503/pexels-photo-3747503.jpeg?auto=compress&cs=tinysrgb&w=400" alt="Book recommendation" loading="lazy">
+                            <div class="book-overlay">
+                                <button class="book-quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h4>Project Hail Mary</h4>
+                            <p class="book-author">Andy Weir</p>
+                            <div class="book-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(5.1k)</span>
+                            </div>
+                            <p class="book-description">A lone astronaut must save Earth from disaster in this thrilling tale.</p>
+                        </div>
+                    </div>
+
+                    <div class="book-card">
+                        <div class="book-cover">
+                            <img src="https://images.unsplash.com/photo-1550399105-c4db5fb85c18?auto=format&fit=crop&w=400" alt="Book recommendation" loading="lazy">
+                            <div class="book-overlay">
+                                <button class="book-quick-view">Quick View</button>
+                            </div>
+                        </div>
+                        <div class="book-info">
+                            <h4>The Seven Husbands</h4>
+                            <p class="book-author">Taylor Jenkins Reid</p>
+                            <div class="book-rating">
+                                <span class="stars">★★★★★</span>
+                                <span class="rating-count">(2.9k)</span>
+                            </div>
+                            <p class="book-description">Hollywood icon reveals her scandalous history.</p>
+                        </div>
+                    </div>
+                </div>
+                <button class="slider-btn next" aria-label="Next">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 18l6-6-6-6"/>
+                    </svg>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Events Section -->
+    <section class="events-section" id="events">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge">Join Our Community</span>
+                <h2 class="section-title">Upcoming Events</h2>
+                <p class="section-subtitle">Connect with fellow readers and book enthusiasts</p>
+            </div>
+            <div class="events-grid">
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="event-day">15</span>
+                        <span class="event-month">Jan</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="https://images.pexels.com/photos/6344241/pexels-photo-6344241.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Book Club Meeting" loading="lazy">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category">📚 Book Club</span>
+                        <h3>Monthly Book Discussion</h3>
+                        <p>Join us for an engaging discussion of this month's selection. Share your thoughts and insights with fellow readers.</p>
+                        <div class="event-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                                6:00 PM - 8:00 PM
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Virtual & In-Person
+                            </span>
+                        </div>
+                        <button class="btn-event">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="event-day">22</span>
+                        <span class="event-month">Jan</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="https://images.pexels.com/photos/10638220/pexels-photo-10638220.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Children's Story Time" loading="lazy">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category">🌟 Children's Program</span>
+                        <h3>Story Time Adventures</h3>
+                        <p>Magical storytelling sessions for children ages 4-8. Bring your little ones for an hour of imagination and wonder.</p>
+                        <div class="event-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                                10:00 AM - 11:00 AM
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Main Library Hall
+                            </span>
+                        </div>
+                        <button class="btn-event">Register Now</button>
+                    </div>
+                </div>
+
+                <div class="event-card">
+                    <div class="event-date">
+                        <span class="event-day">28</span>
+                        <span class="event-month">Jan</span>
+                    </div>
+                    <div class="event-image">
+                        <img src="https://images.pexels.com/photos/17131239/pexels-photo-17131239.jpeg?auto=compress&cs=tinysrgb&w=600" alt="Author Meet" loading="lazy">
+                    </div>
+                    <div class="event-content">
+                        <span class="event-category">✍️ Author Event</span>
+                        <h3>Meet the Author Series</h3>
+                        <p>Exclusive conversation with bestselling authors. Get your books signed and learn about their creative process.</p>
+                        <div class="event-meta">
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M12 6v6l4 2"/>
+                                </svg>
+                                4:00 PM - 6:00 PM
+                            </span>
+                            <span>
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                    <circle cx="12" cy="10" r="3"/>
+                                </svg>
+                                Auditorium
+                            </span>
+                        </div>
+                        <button class="btn-event">Register Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Membership Section -->
+    <section class="membership-section" id="membership">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-badge badge-light">Join Our Community</span>
+                <h2 class="section-title" style="color: white;">Become a Member</h2>
+                <p class="section-subtitle" style="color: rgba(255,255,255,0.9);">Join our community and unlock exclusive benefits including unlimited borrowing, early access to new releases, invitations to special events, and personalized reading recommendations.</p>
+            </div>
+            <div class="membership-wrapper">
+                <div class="membership-info">
+                    <div class="membership-benefits">
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                    <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Unlimited Borrowing</h4>
+                                <p>Access our entire collection</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Exclusive Events</h4>
+                                <p>VIP access to special gatherings</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="8" r="5"/>
+                                    <path d="M20 21a8 8 0 1 0-16 0"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Priority Reservations</h4>
+                                <p>Reserve new releases first</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10"/>
+                                    <path d="M8 14s1.5 2 4 2 4-2 4-2M9 9h.01M15 9h.01"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Personalized Service</h4>
+                                <p>Custom reading recommendations</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="3" width="20" height="14" rx="2"/>
+                                    <path d="M8 21h8M12 17v4"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Digital Resources</h4>
+                                <p>E-books and audiobooks</p>
+                            </div>
+                        </div>
+                        <div class="benefit-item">
+                            <div class="benefit-icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                    <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                                    <circle cx="9" cy="7" r="4"/>
+                                    <path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75"/>
+                                </svg>
+                            </div>
+                            <div class="benefit-text">
+                                <h4>Community Forums</h4>
+                                <p>Connect with book lovers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="membership-form-container">
+                    <form class="membership-form" id="membershipForm">
+                        <h3>Join Alexandria Today</h3>
+                        <p class="form-subtitle">Fill out the form below to start your literary journey</p>
+                        
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="address">Address *</label>
+                            <textarea id="address" name="address" rows="3" required></textarea>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="membershipType">Membership Type *</label>
+                            <select id="membershipType" name="membershipType" required>
+                                <option value="">Select membership type</option>
+                                <option value="basic">Basic (Free) - 3 books/month</option>
+                                <option value="standard">Standard ($9.99/month) - 10 books/month</option>
+                                <option value="premium">Premium ($19.99/month) - Unlimited</option>
+                                <option value="family">Family ($29.99/month) - Up to 4 members</option>
+                            </select>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="newsletter" name="newsletter">
+                                <span>Subscribe to our newsletter for updates and recommendations</span>
+                            </label>
+                        </div>
+
+                        <div class="checkbox-group">
+                            <label class="checkbox-label">
+                                <input type="checkbox" id="terms" name="terms" required>
+                                <span>I agree to the terms and conditions *</span>
+                            </label>
+                            <span class="error-message"></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-submit">Complete Registration</button>
+                    </form>
+
+                    <div class="form-success" id="formSuccess">
+                        <div class="success-icon">
+                            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
+                                <path d="M22 4L12 14.01l-3-3"/>
+                            </svg>
+                        </div>
+                        <h3>Welcome to Alexandria!</h3>
+                        <p>Your membership registration has been received. Check your email for confirmation and next steps.</p>
+                        <button class="btn btn-primary" onclick="location.reload()">Register Another Member</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <div class="footer-logo">
+                        <div class="logo-icon">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+                            </svg>
+                        </div>
+                        <span>Alexandria</span>
+                    </div>
+                    <p class="footer-description">Your trusted partner in discovering the joy of reading. Join thousands of book lovers in our community.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link" aria-label="Facebook">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Twitter">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="Instagram">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="social-link" aria-label="LinkedIn">
+                            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                                <circle cx="4" cy="4" r="2"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#search">Search Books</a></li>
+                        <li><a href="#categories">Browse Categories</a></li>
+                        <li><a href="#collections">Featured Collections</a></li>
+                        <li><a href="#recommendations">Recommendations</a></li>
+                        <li><a href="#events">Upcoming Events</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>About</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Our Mission</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul class="contact-info">
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                                <circle cx="12" cy="10" r="3"/>
+                            </svg>
+                            <span>123 Library Street<br>Book City, BC 12345</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 16.92z"/>
+                            </svg>
+                            <span>+1 (555) 123-4567</span>
+                        </li>
+                        <li>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                                <path d="M22 6l-10 7L2 6"/>
+                            </svg>
+                            <span>info@alexandria.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Alexandria Digital Library. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Cookie Policy</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 15l-6-6-6 6"/>
+        </svg>
+    </button>
+
+    <script src="script.js"></script>
+</body>
+</html>
